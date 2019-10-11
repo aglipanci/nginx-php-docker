@@ -35,10 +35,9 @@ RUN docker-php-ext-install gd
 RUN docker-php-ext-install intl
 
 RUN touch /etc/apt/sources.list.d/nginx.list
-RUN touch /etc/apt/sources.list.d/nginx.list
 
-RUN echo "deb http://nginx.org/packages/debian/ stretch nginx" > /etc/apt/sources.list.d/opscode.list
-RUN echo "deb-src http://nginx.org/packages/debian/ stretch nginx" > /etc/apt/sources.list.d/opscode.list
+RUN echo "deb http://nginx.org/packages/debian/ stretch nginx" > /etc/apt/sources.list.d/nginx.list
+RUN echo "deb-src http://nginx.org/packages/debian/ stretch nginx" > /etc/apt/sources.list.d/nginx.list
 
 RUN curl -L https://nginx.org/keys/nginx_signing.key | apt-key add -
 RUN apt-get update
